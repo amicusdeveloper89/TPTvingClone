@@ -4,20 +4,22 @@ import Home from './pages/Home'
 import About from './pages/About/About'
 import Team from './pages/About/Team'
 import Company from './pages/About/Company'
-import Contact from './pages/Contact'
+import Board from './pages/Board'
+import NewPost from './pages/NewPost'
 import './assets/styles.css'
 import MovieDetail from "./pages/MovieDetail"
 
 function App() {
   return(
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />}>
           <Route path="team" element={<Team />} />
           <Route path="company" element={<Company />} />
         </Route>
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/board" element={<Board />} />
+        <Route path="/new-post" element={<NewPost />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
       </Routes>
     </Router>

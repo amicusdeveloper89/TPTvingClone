@@ -37,11 +37,11 @@ const Home = () => {
             {movies.map((movie) => (
               <Card key={movie.id} className="movie-item">
                 <Link to={`/movie/${movie.id}`} onClick={() => movieClick(movie.id)}>
-                  <h3 className="movie-title">{movie.title} <span>({visits[movie.id] || 0})</span></h3>
+                  <h3 className="movie-title">{movie.title}</h3>
                   <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                 </Link>
                 <div className='visits-info'>
-                  <span>방문자수: {visits[movie.id] || 0}</span>
+                  <span>조회수: {visits[movie.id] || 0}</span>
                   <span style={{ float: 'right' }}>♡: {favors[movie.id] || 0}</span>
                 </div>
               </Card>
